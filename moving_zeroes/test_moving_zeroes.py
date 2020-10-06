@@ -52,6 +52,7 @@ class Test(unittest.TestCase):
         self.assertEqual(len(answer), len(arr)) 
 
         for x in answer[:3]:
+            print('what is x', x)
             self.assertTrue(x in arr)
             self.assertTrue(x != 0)
 
