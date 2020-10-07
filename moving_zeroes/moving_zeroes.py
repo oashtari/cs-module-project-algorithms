@@ -18,7 +18,7 @@ def moving_zeroes(arr):
     # print('new arr', new_arr)
     # print('zero', zero_arr)
 
-    # solution 2
+    # solution 2 not working yet
         # if arr[i] == 0:
         #     print('arr', arr)
         #     print('i', i)

@@ -60,51 +60,51 @@ if __name__ == "__main__":
 # 2. check if midpoint element matches its index
 # 3. when we've narrowed search space down to 2 elements, we can always return the larger/right one
 
-def find_smallest_missing(arr):
-    # if arr is not sorted, can run arr.sort(), but that has a O(n log n) which is expensive
-    if arr[0] !=0:
-        return 0
+# def find_smallest_missing(arr):
+#     # if arr is not sorted, can run arr.sort(), but that has a O(n log n) which is expensive
+#     if arr[0] !=0:
+#         return 0
 
-    # add another check if arr[-1] == len(arr) -1, checks to see if nothing is missing
-    if arr[-1] == len(arr) - 1:
-        return len(arr)
+#     # add another check if arr[-1] == len(arr) -1, checks to see if nothing is missing
+#     if arr[-1] == len(arr) - 1:
+#         return len(arr)
 
-    start = 0
-    end = len(arr) - 1
+#     start = 0
+#     end = len(arr) - 1
 
-    while start < end:
-        mid = (start + end) // 2
+#     while start < end:
+#         mid = (start + end) // 2
 
-        if arr[mid] == mid:
-            # toss out left side
-            # don't include midpoint as it matches its index
-            start = mid + 1
+#         if arr[mid] == mid:
+#             # toss out left side
+#             # don't include midpoint as it matches its index
+#             start = mid + 1
 
-        else:
-            # toss out the right side, but do keep the midpoint
-            # since cannot rule out that is the smallest missing
-            end = mid
+#         else:
+#             # toss out the right side, but do keep the midpoint
+#             # since cannot rule out that is the smallest missing
+#             end = mid
 
-    # we've narroed it down to one element
-    # at this point start == end, so return either
-    return end
+#     # we've narroed it down to one element
+#     # at this point start == end, so return either
+#     return end
 
-    # O(n) traverals through entire array
-    # realizing that we're not taking advantage of fact that input is sorted,
-    # we can ask ourselves how to leverage that fact ()
-    for i in range(len(arr) - 1):
-        if arr[i+1] != arr[i] + 1:
-            return arr[i] + 1
+#     # O(n) traverals through entire array
+#     # realizing that we're not taking advantage of fact that input is sorted,
+#     # we can ask ourselves how to leverage that fact ()
+#     for i in range(len(arr) - 1):
+#         if arr[i+1] != arr[i] + 1:
+#             return arr[i] + 1
 
-    return arr[-1] + 1
+#     return arr[-1] + 1
 
-A1 = [0,1,2,6,9,11,15]
-A2 = [1,2,3,4,6,9,11,15]
-A3 = [0,1,2,3,4,5,6]
+# A1 = [0,1,2,6,9,11,15]
+# A2 = [1,2,3,4,6,9,11,15]
+# A3 = [0,1,2,3,4,5,6]
 
-print(find_smallest_missing(A1))
-print(find_smallest_missing(A2))
-print(find_smallest_missing(A3))
+# print(find_smallest_missing(A1))
+# print(find_smallest_missing(A2))
+# print(find_smallest_missing(A3))
 
 
 """
