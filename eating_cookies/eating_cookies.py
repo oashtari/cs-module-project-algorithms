@@ -4,6 +4,20 @@ Returns: an integer
 '''
 # what is runtime and why is it slow? O(3**n)
 # using caching/memoization, runtime is now O(n)
+
+# no cache solution
+
+# def eating_cookies(n):
+#     if n < 0:
+#         return 0
+
+#     if n == 0:
+#         return 1
+
+#     return eating_cookies(n-1) + eating_cookies(n-2) + eating_cookies(n-3)
+
+# cache solution
+
 def eating_cookies(n, cache=None):
     # Your code here
     # what are base case(s)
