@@ -6,6 +6,9 @@ import time
 
 # input: arr of numbers where thre is one number that is not a duplicate; 
 # every other number has a dupe
+
+# NAIVE
+
 # def single_number(arr):
 #     # Your code here
 #     # O(n**2)
@@ -14,6 +17,7 @@ import time
 #         if arr.count(num) == 1: # O(n)
 #             return num
 
+# OPTIMIZED?
 
 def single_number(arr):
     # sets are closely related cousin to dictionaries
