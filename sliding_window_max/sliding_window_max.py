@@ -6,14 +6,28 @@ def sliding_window_max(nums, k):
     # Your code here
     all_max = []
 
+    # NAIVE
+    # for i in range(len(nums)-k+1):
+    #     the_max = max(nums[i:k])
+    #     k +=1
+    #     all_max.append(the_max)
+    #     # print('k', )
+    #     # print('i', i)
+    #     # print(nums[i])
+    # return all_max
+
+    # SLIGHTLY LESS NAIVE
+    start = 0
+    end = k
     for i in range(len(nums)-k+1):
-        the_max = max(nums[i:k])
-        k +=1
+        the_max = max(nums[start:end])
         all_max.append(the_max)
-        # print('k', )
-        # print('i', i)
-        # print(nums[i])
+        start += 1
+        end += 1
+    print(all_max)
     return all_max
+
+
 
     # for i in range()
 
